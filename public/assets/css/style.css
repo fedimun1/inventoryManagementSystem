@@ -1,0 +1,93 @@
+  
+
+
+
+	.me:hover{
+		border-color: #001959;
+        box-shadow: 0 0 0 4px #333,
+                    0 0 0 6px #001959;
+	}
+div label .con
+  {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: -10px;
+    margin-right: 0px
+    width: 500px;
+    background: #001959;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    visibility: hidden;
+     opacity: 0;
+    transition: 0.5s;
+    transform: translateX(-50%) translateY(-50px);
+
+    }
+
+  div label:hover .con
+  {
+   visibility: visible;
+   opacity: 1;
+      transform: translateX(-50%) translateY(-50px);
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+div label .con
+  {
+  	color: white;
+  	font-weight: bold;
+  	position: absolute;
+  	top: -10px;
+  	margin-right: 0px
+  	width: 500px;
+  	background: #001959;
+  	padding: 10px;
+  	box-sizing: border-box;
+  	border-radius: 4px;
+  	visibility: hidden;
+     opacity: 0;
+  	transition: 0.5s;
+  	transform: translateX(-50%) translateY(-50px);
+
+  	}
+
+  div label:hover .con
+  {
+   visibility: visible;
+   opacity: 1;
+     	transform: translateX(-50%) translateY(-50px);
+
+  }
+
+  div label .con:before
+  {
+  content: ' ';
+  	position: absolute;
+  	width: 10px;
+  	height: 10px;
+  	background-color: #001959;
+  	bottom: -5px;
+  left:104px;
+  	transform: rotate(45deg);
+  }
+  */
+

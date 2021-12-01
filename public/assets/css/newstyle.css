@@ -1,0 +1,857 @@
+html {overflow-y: scroll;} 
+body {
+	margin: 0px;
+	background-color: #eaeeed;
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #363636;
+	}
+
+h1 {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 24px;
+	font-weight: normal;
+	color: black;
+	margin: 0px;
+	padding:0px;	
+	}
+
+h2 {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 20px;
+	font-weight: normal;
+	color: black;
+	margin: 0px;
+	padding: 0px;
+	}
+
+h3 {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	color: black;
+	margin: 0px;
+	padding: 0px;
+	}
+
+h4 {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: black;
+	margin: 0px;
+	padding: 0px;
+	}
+
+h5 {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: black;
+	margin: 0px;
+	padding: 0px;
+	}
+
+p {
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+	color: #363636;	
+	}
+
+li {
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #ffffff;	
+	}
+
+pre {
+	font-size: 11px;
+	color: #363636;
+	padding:15px;
+	border: 1px silver solid;
+	background-color: #eeeeee;
+	}
+
+hr {	
+	color: silver;
+	height: 1px;
+	width: 60%;
+	}
+
+th {
+    font-family:  Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #001959;
+	text-align: left;
+	background-color: #dddddd;     
+    font-weight: bold;
+    background-repeat: repeat-x;
+
+    }
+
+td {
+
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: black;
+  display: table-cell;	
+
+	}
+	.newte
+	{
+			max-width: 100px;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+	}
+
+legend {
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: navy;
+	font-weight: bolder;
+	width: auto
+	}
+
+fieldset {
+    margin-top: 15px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border:1px solid #1E90FF;
+	}
+
+dt {font-weight:bold;}
+dd {font-style:italic;}
+
+a:link, a:visited {
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #0000cc;
+	font-style: initial;
+	}
+
+a:active, a:hover {
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #cc0000;
+	
+	}
+
+img {border: none; border: 0;}
+
+caption {
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: left;
+	color:white;
+	width:100%;
+	background-color: #1E90FF;
+	padding: 2px 7px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+/********************************************************/
+/********** Liferay Freemarker Tempate Styles **********/
+/********************************************************/
+
+
+
+		/* This includes the custom stlyes for the GRANTS.GOV Roll-over Navigation */
+#wrapper {
+	padding-top:0px;
+	background-color: white;
+	border: 5px solid #00457c;
+	max-width: 1200px;
+	min-width: 970px;
+	margin: 0px auto;
+	height:auto;
+	border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -o-border-radius: 15px; -khtml-border-radius: 15px;
+	box-shadow: rgba(0,0,0,0.35) 0 1px 3px; -webkit-box-shadow: rgba(0,0,0,0.35) 0 1px 3px; -moz-box-shadow: rgba(0,0,0,0.35) 0 1px 3px; 
+	}
+	
+		
+#logo {	
+	float:left;
+	width:250px;
+	height:80px;
+	vertical-align:middle;
+	}
+	
+#banner {	
+	height:100px;
+	padding:5px;
+	
+	background-repeat:repeat-x;
+	background-color: #00457c;
+	border-top-left-radius: 9px; border-top-right-radius: 9px; -webkit-border-top-left-radius: 9px; -webkit-border-top-right-radius: 9px; -moz-border-top-left-radius: 9px; -moz-border-top-right-radius: 9px; -o-border-top-left-radius: 9px; -o-border-top-right-radius: 9px; -khtml-border-top-left-radius: 9px; -khtml-border-top-right-radius: 9px;
+	}
+	
+	
+/********** Custom Style for Grants.gov Navigation in Banner **********/	
+#globalwidget {	float:right; width:600px; height:80px; }
+	
+#globalnav {text-align:right;}
+#globalnav ul {list-style-type: none; margin: 0px 0px 0px 0px; padding:0px; line-height:10px;}
+#globalnav li {padding: 0px; margin:0px;  display:inline; color:#1E90FF; }
+#globalnav li a:link, #globalnav li a:visited {color:white; font-family:  Arial, Helvetica, sans-serif; font-size: 11px; text-decoration:none; text-transform:uppercase; padding:0px 2px 0px 2px;}
+#globalnav li a:active, #globalnav li a:hover {color:#1E90FF; font-family:  Arial, Helvetica, sans-serif; font-size: 11px; text-decoration:none; text-transform:uppercase; padding:0px 2px 0px 2px;}
+
+/********** Custom Style for Grants.gov Global Search in Banner **********/		
+#globalsearch { 
+	float: right;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 15px; 
+	height: 25px; 
+	text-align:right;
+	margin-top: 17px;
+	height: 25px;	
+	}
+#globalsearch table {margin:0; padding:0; border:0;}
+#globalsearch table tr td span {font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: white; text-transform:uppercase; margin-right:5px;}
+
+#keywords { /* The Keyword Search Textbox for Custom Global Search */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px; 
+	color: navy; 
+	border: none;
+	width: 200px;
+	margin: 0px;
+	padding: 0px 10px 0px 10px;
+	box-shadow:none;
+	background-image:none;
+	height:25px;
+	box-shadow: rgba(0,0,0,0.35) 0 1px 3px inset; -webkit-box-shadow: rgba(0,0,0,0.35) 0 1px 3px inset; -moz-box-shadow: rgba(0,0,0,0.35) 0 1px 3px inset;
+}
+
+#go_button { /* The Submit Button for Custom Global Search */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px; 
+	color: white;
+	font-weight:bold;
+	text-transform: uppercase;
+	margin: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: none;
+
+	background-repeat:repeat-x;
+	background-color: #a30000;
+	border-left: none;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;	
+	height: 25px;
+	text-shadow:none;
+	box-shadow: rgba(0,0,0,0.35) 0 1px 3px inset; -webkit-box-shadow: rgba(0,0,0,0.35) 0 1px 3px inset; -moz-box-shadow: rgba(0,0,0,0.35) 0 1px 3px inset;
+}
+
+#jumpMenu { /* The Selectbox for Global Search */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px; 
+	color: navy; 
+	border: none;
+	margin: 0px;
+	padding: auto;
+	vertical-align: middle !important;
+	background-image:none;
+	height:25px;
+	line-height:25px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	box-shadow: rgba(0,0,0,0.35) 0 1px 3px inset; -webkit-box-shadow: rgba(0,0,0,0.35) 0 1px 3px inset; -moz-box-shadow: rgba(0,0,0,0.35) 0 1px 3px inset;	
+}
+
+/*This will align text for firefox*/
+@-moz-document url-prefix() {
+    #jumpMenu {
+        padding-top:5px;
+    }	
+}
+	
+#topnav { /* Custom Container for Navigation Generated by Liferay. See megamenu.css for Detailed Styles. */
+	clear:both;
+	height:35px;  
+	border-bottom: 5px #1E90FF solid; 
+	background-color: #00457c;
+
+	background-repeat: repeat-x;
+}
+	/********** Custom Style to Modify Liferay Generated Breadcrumbs **********/
+#breadcrumbs-title {display:none;} 	
+#breadcrumbs {clear:both; padding:3px 0px 2px 3px; border-bottom: 1px solid #1E90FF;}
+#breadcrumbs ul {list-style-type: none; margin:0px; padding:0px;}
+#breadcrumbs ul {display:inline-block;}
+#breadcrumbs li {display:inline; padding: 0px 15px 0px 10px; background-position: 100% 50%; background-repeat:no-repeat;}
+#breadcrumbs li a:link, #breadcrumbs li a:visited {color:navy; text-transform:capitalize;}
+#breadcrumbs li a:active, #breadcrumbs li a:hover {color:#cc0000; text-transform:capitalize;}
+#breadcrumbs li.last {color:navy; background-image:none; font-style:italic;}
+
+/********** Custom Style to Modify Liferay Generated Titles and Content **********/
+.page-title {padding-top: 5px; padding-bottom:10px; margin:0px; text-transform:uppercase; color:navy;} 
+.portlet-title {display:none;} 
+.portlet-content {margin:0; padding:0;} 
+
+
+.portlet { margin-bottom: 2px !important;}
+
+.portlet-msg-alert {
+	background: #EEE none no-repeat 6px 50%;
+    border: 1px solid #555;
+    color: #34404F;
+    font-weight: bold;
+    margin: 2px auto 14px;
+    padding: 6px 6px 6px 30px;
+    text-align: left; 
+	background-color: #FFC;
+	background-image: url(../images/messages/alert.png);
+	background-position: 6px 20%;
+	border-color: #FC0;
+}
+
+#content {	
+	padding: 0px 10px 0px 10px;
+	clear:both;
+	background-color: white;
+	height:100%;
+	}
+	
+	/********** Custom Style to Modify Liferay Generated Left Navigation and Grants.gov Left Navigation. Additional Syles in navigation.css **********/
+#leftcolumn {width: 20%; float: left; } 
+#status, #leftnav, .nav-menu {
+	width: 100%;
+	border: 1px solid #1E90FF;
+	margin: 0px;
+	padding: 5px;
+	border-radius: 9px; -webkit-border-radius: 9px; -moz-border-radius: 9px; -o-border-radius: 9px; -khtml-border-radius: 9px;
+	}
+	
+.nav-menu li a.selected {
+  color:navy !important;
+  font-weight: bold;
+  text-decoration: none; }
+  
+.nav-menu li a.hover {color:#cc0000 !important;}
+
+.nav-menu ul {
+  padding-left: 3px !important; }
+  
+#status {margin-bottom: 10px;}
+#leftnav {line-height:18px;}
+#leftnav ul, .nav-menu ul {list-style-type: none; margin:0px; padding:0px;}
+#leftnav li, .nav-menu li {padding: 0px; margin:0px;}
+#leftnav li a:link, #leftnav li a:visited, .nav-menu li a:link, .nav-menu li a:visited {color:navy; text-decoration:none; padding-left: 10px; background-image:url('../images/grants/icon-bullet.png'); background-position: 0% 50%; background-repeat:no-repeat;}
+#leftnav li a:active, #leftnav li a:hover, .nav-menu li a:active, .nav-menu li a:hover {color:#cc0000; text-decoration:none; padding-left: 10px; background-image:url('../images/grants/icon-bullet-hover.png'); background-position: 0% 50%; background-repeat:no-repeat;}
+#leftnav li a.selected:link, .nav-menu li a.selected:link {font-weight:bold; color:#cc0000; text-decoration:none; padding-left: 10px; background-image:url('../images/grants/icon-bullet-default.png'); background-position: 0% 50%; background-repeat:no-repeat;}
+#leftnav .selected a:link, .nav-menu li a.ancestor:link {font-weight:bold; color:#cc0000; }
+#leftnav .last, .nav-menu .last {border-bottom:none; margin-bottom: 15px;}
+#leftnav h3, #leftnavhook h3{ color:navy; text-transform: uppercase; font: bold 12px Arial, Helvetica, sans-serif; margin: 5px 0 5px 0;}
+
+ul.level-1 {font-size: 14px;}
+ul.level-2 {font-size: 12px; margin:5px 10px;}
+ul.level-3 {font-size: 10px; margin:5px 10px;}
+ul.level-4 {font-size: 10px; margin:5px 10px;}
+ul.level-5 {font-size: 10px; margin:5px 10px;}
+
+/**********Grants Custom Style to Modify Liferay Generated Footer **********/
+#footer {	
+	clear:both;
+	padding:0;
+
+	border-top:5px #1E90FF solid;
+	height:80px;
+	border-bottom-left-radius: 9px; border-bottom-right-radius: 9px; -webkit-border-bottom-left-radius: 9px; -webkit-border-bottom-right-radius: 9px; -moz-border-bottom-left-radius: 9px; -moz-border-bottom-right-radius: 9px; -o-border-bottom-left-radius: 9px; -o-border-bottom-right-radius: 9px; -khtml-border-bottom-left-radius: 9px; -khtml-border-bottom-right-radius: 9px;
+	}
+	
+	/********** Custom Style for Grants.gov Footer Elements **********/	
+#footnav {width:70%; float:left;}
+#footnav ul {list-style-type: none; margin:0px; padding:0px 0px 3px 0px;}
+#footnav li {display:inline; font-size:11px; font-weight:normal; color: #1E90FF;}
+#footnav li a:link, #footnav li a:visited {color:white; font-family:  Arial, Helvetica, sans-serif; font-size: 11px; text-decoration:none; padding:0px 2px 0px 2px;}
+#footnav li a:active, #footnav li a:hover {color:#1E90FF; font-family:  Arial, Helvetica, sans-serif; font-size: 11px; text-decoration:none; padding:0px 2px 0px 2px;}
+#footnav .first {color:white;}
+#footnav .last {} 
+#footnav .exitlink {background-image: url('../images/grants/icon-footer-exit.png'); background-repeat:no-repeat; background-position: 100% 50%; padding-right: 15px !important;}
+	
+#footbrand { color:white; width:30%; float:left; text-align:right; line-height:16px;}
+#footbrand a:link, #footbrand a:visited {color:white; font-family:  Arial, Helvetica, sans-serif; font-size: 11px; text-decoration:none;}
+#footbrand a:active, #footbrand a:hover {color:#1E90FF; font-family:  Arial, Helvetica, sans-serif; font-size: 11px; text-decoration:none;}
+#footer div a:link, #footer div span {}
+
+/********** Custom Style for Grants.gov Links with Icons **********/	
+.pdflink {background-image: url('../images/file_system/small/pdf.png'); background-repeat:no-repeat; background-position: 0% 50%; padding: 2px 8px 2px 20px !important;}
+.xmllink {background-image: url('../images/grants/icon-xml.png'); background-repeat:no-repeat; background-position: 0% 50%; padding: 2px 8px 2px 20px !important;}
+.rsslink {background-image: url('../images/grants/icon-rss.png'); background-repeat:no-repeat; background-position: 0% 50%; padding: 2px 8px 2px 20px !important;}
+.bloglink {background-image: url('../images/grants/icon-blogger.png'); background-repeat:no-repeat; background-position: 0% 50%; padding: 2px 8px 2px 20px !important;}
+.newbloglink {background-image: url('../images/grants/icon-blog.png'); background-repeat:no-repeat; background-position: 0% 50%; padding: 2px 8px 2px 20px !important;}
+.twitterlink {background-image: url('../images/grants/icon-twitter.png'); background-repeat:no-repeat; background-position: 0% 50%; padding: 2px 8px 2px 20px !important;}
+.youtubelink {background-image: url('../images/grants/icon-youtube.png'); background-repeat:no-repeat; background-position: 0% 50%; padding: 2px 8px 2px 20px !important;}
+.facebooklink {background-image: url('../images/grants/icon-facebook.png'); background-repeat:no-repeat; background-position: 0% 50%; padding: 2px 8px 2px 20px !important;}
+.listservlink {background-image: url('../images/grants/icon-listserv.png'); background-repeat:no-repeat; background-position: 0% 50%; padding: 2px 8px 2px 20px !important;}
+.xmllink:hover, .rsslink:hover, .bloglink:hover, .facebooklink:hover, .listservlink:hover {}
+
+/***************************************************************/
+/********** Global Search Results Styles **********/
+.globsearchgreen {color:green;}
+
+/* Pagination Navigation Styles */
+.pagination {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #363636;
+	padding-top: 10px;
+}
+
+a.paginationlink:link, a.paginationlink:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0000cc;
+	text-decoration: none;
+	padding-left: 10px;
+}
+
+a.paginationlink:active, a.paginationlink:hover, a.paginationlinkselect:link, a.paginationlinkselect:visited, a.paginationlinkselect:active, a.paginationlinkselect:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #cc0000;
+	text-decoration: none;
+	padding-left: 10px;
+}
+
+
+/* Search Pagination Navigation Styles */
+.grid-pagination {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: white;
+}
+
+a.grid-paginationlink:link, a.grid-paginationlink:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: white;
+	text-decoration: none;
+	padding-left: 10px;
+}
+
+a.grid-paginationlink:active, a.grid-paginationlink:hover, a.grid-paginationlinkselect:link, a.grid-paginationlinkselect:visited, a.grid-paginationlinkselect:active, a.grid-paginationlinkselect:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #cc0000;
+	text-decoration: none;
+	padding-left: 10px;
+}
+
+/********** Button Links **********/
+a.actionlink:link, a.actionlink:visited {
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #0000cc;
+	text-decoration: none;
+}
+
+a.actionlink:active, a.actionlink:hover, a.actionlinkselect {
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #cc0000;
+	text-decoration: none;
+}
+
+.actionbutton {
+ 	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: white;
+	font-weight:bold;
+    padding: 5px 15px 5px 15px;
+    margin: 0px;
+	border: 2px solid #a30000;
+
+	background-repeat:repeat-x;
+	background-color: #a30000;
+	border-radius: 5px;	
+	text-shadow:none;
+	
+}
+
+.actionbuttondisabled {
+ 	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: white;
+	font-weight:bold;
+    padding: 5px 15px 5px 15px;
+    margin: 0px;
+	border: 2px solid #c0c0c0;
+	background-color: #c0c0c0;
+	border-radius: 5px;	
+	text-shadow:none;
+	
+}
+
+a.actionbutton:after {content:"\0020 \00BB";}
+a.actionbutton:link, a.actionbutton:visited {color:white; text-decoration:none;}
+a.actionbutton:active, a.actionbutton:hover {color:white; text-decoration:none; background-color:#00457c; border:2px #00457c solid;}
+
+/********** Form Styles **********/
+.instructions {
+    font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	font-style: italic;
+}
+
+.label {
+    font-family:  Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: black;
+	font-weight: bold;
+	text-align: right;
+	white-space: nowrap;
+}
+
+.inlinelabel {
+    font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.detailslabel {
+    font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	font-weight: bold;
+	text-align: right;
+	white-space: nowrap;
+}
+
+.rule {
+	color: blue;
+	height: 1px;
+	width: 100%;
+}
+
+.blue {
+	color: blue;
+	white-space: nowrap;
+}
+
+.disabled 
+{
+	background-color: #cccccc;
+}
+
+.formfield {
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+}
+
+.boldformfield {
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	font-weight: bold;
+}
+
+.formpanel {
+	margin-top:5px;
+	margin-bottom:5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-spacing: 0px;
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #363636;
+}
+
+.formpanelcontent {
+	border:1px solid silver;
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #363636;
+	overflow:scroll;
+	overflow-x: hidden;
+	text-wrap:none;
+	margin: 0px;
+	padding: 0px;
+	height: 75px;
+	width: 300px;
+	background-color:#ffffff;
+}
+
+div.formpanelcontent:active, div.formpanelcontent:hover  {border:1px solid #ffcc00;}
+
+.formpanelvalues {
+	width:700px;
+}
+
+/********** Grid Styles **********/
+.grid {
+	background-color: white;
+	border-right:1px silver solid;
+	border-bottom:1px silver solid;
+	width:100%;
+    }
+
+.grid td, .grid th {
+	padding: 2px 2px 3px 2px;
+	border-top: 1px solid silver;
+	border-left: 1px solid silver;
+	}
+
+.gridtitlebar {
+	width:100%;
+	background-color: #1E90FF;
+	padding: 7px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.gridtitlerow {
+	background-color: #dddddd;    
+
+	background-repeat: repeat-x;
+}
+
+.gridtitlerow td {
+    border: 1px solid #C0C0C0;
+    padding: 10px 3px;
+}
+
+.gridfooterbar {
+	width:100%;
+	background-color: #1E90FF;
+	padding: 7px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.gridtitle {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight:bold;
+	color: white;
+	text-transform:uppercase;
+    vertical-align: middle;	
+}
+
+.gridview {
+    font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+    background-color: #c29029;
+    border: none;
+    padding: 0px 0px 0px 0px; 
+    clear: right;
+    }
+    
+.gridfooter {
+    font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: white;
+    } 
+    
+.gridscrollable {
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	overflow:scroll;
+	overflow-x: hidden;
+	text-wrap:none;
+	margin: 0px;
+	padding: 0px;
+	height: 175px; 
+	width: 100%;
+	border: 1px solid #dadada;
+}
+
+
+/********** GG-Grid Styles **********/
+table.gg-grid  {margin:0; background-color: #efefef; clear: both; border-collapse:collapse; border-spacing:0; width:100%;}
+
+.gg-grid caption {margin:0; width:auto;color:white;font-weight:bold;text-align:left;background-color:#1E90FF; padding:7px; border-top-left-radius:5px; border-top-right-radius:5px;}
+.gg-grid th, .gg-grid tfoot td {border: 1px solid silver; padding: 7px 2px 7px 2px; background-color:#dddddd;  background-repeat:repeat-x; font-weight:normal;}        
+.gg-grid td {border: 1px solid silver; padding: 2px 2px 2px 2px; }
+
+.gg-grid > tbody > tr:nth-child(even) {background-color: #ffffff;}  
+.gg-grid > tbody > tr:nth-child(odd) {background-color: #f1f1f1;}
+
+
+/********** Alternating Rows **********/
+.gridevenrow, .even {
+    background-color: #ffffff;
+    }
+    
+.gridoddrow, .odd {
+    background-color: #f1f1f1;    
+}
+   
+/********** Grid Links **********/
+a.gridlink:link, a.gridlink:visited {
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0000cc;
+	text-decoration: none;
+}
+
+a.gridlink:active, a.gridlink:hover {
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #cc0000;
+	text-decoration: underline;
+}
+
+a.gridtitlelink:link, a.gridtitlelink:visited {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: bold;
+    position: absolute;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+a.gridtitlelink:active, a.gridtitlelink:hover {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #a7d0f7;
+	text-decoration: none;
+	font-weight: bold;
+    position: absolute;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.greyedout {
+  color: #A7A7A7;
+  opacity:0.8; 		
+}
+
+.searchtablelabel {
+    font-family:  Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #333333;
+	font-weight: bold;
+	text-align: right;
+	margin-left: 30px;
+}
+
+.searchtablebox
+{
+    font-family:  Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #333333;
+}
+
+/********** Styles for the help link **********/
+a.help:link, a.help:visited {
+                font-family:  Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                font-weight: bold;
+                text-decoration: none;
+                color: white;
+                background-color:#0000cc;
+                border-radius:20px;
+                padding:1px 4px;
+                cursor:help;
+                border:1px solid #0000cc;
+                margin:0px 0px 0px 15px;
+}
+
+a.help:active, a.help:hover {
+                font-family:  Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                font-weight: bold;
+                text-decoration: none;
+                color: white;
+                background-color:#cc0000;
+                border-radius:20px;
+                padding:1px 4px;
+                cursor:help;
+                border:1px solid #cc0000;
+                margin: 0px 0px 0px 15px;
+}
+
+div.gg_help a:link, div.gg_help a:visited {
+                font-family:  Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                font-weight: bold;
+                text-decoration: none;
+                color: white;
+                background-color:#0000cc;
+                border-radius:20px;
+                padding:1px 4px;
+                cursor:help;
+                border:1px solid #0000cc;
+                margin:0px 0px 0px 15px;
+}
+
+div.gg_help a:active, div.gg_help a:hover {
+                font-family:  Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                font-weight: bold;
+                text-decoration: none;
+                color: white;
+                background-color:#cc0000;
+                border-radius:20px;
+                padding:1px 4px;
+                cursor:help;
+                border:1px solid #cc0000;
+                margin: 0px 0px 0px 15px;
+}
+
+/* 20161222wk - R15.4 */
+/* #switchProfilePanel a {
+    padding: 5px;
+}*/
+#switchProfilePanel a:link, #switchProfilePanel a:visited {
+	color: #0000cc !important;
+	text-decoration: none;
+}
+
+#switchProfilePanel a:active, #switchProfilePanel a:hover {
+	color: #cc0000 !important;
+	text-decoration: none;
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: ;
+}
+
+/* Create an active/current tablink class */
+ ul li.active {
+  background-color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* ================== */

@@ -1,0 +1,166 @@
+
+.limiter {
+  width: 100%;
+margin-top:10px;
+}
+
+.container-table100 {
+  width: 100%;
+  min-height: 100vh;
+  background: #c4d3f6;
+
+
+}
+
+.wrap-table100 {
+  width: 100%
+  border-radius: 20x;
+  overflow: hidden;
+ box-shadow: -20px 0 35px -25px black, 20px 0 35px -25px black;
+}
+
+.table {
+  width: 100%;
+  display: table;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .table {
+    display: block;
+  }
+}
+
+.roww {
+  display: table-row;
+  background: #fff;
+}
+
+.roww.header {
+  color: #ffffff;
+  background: #6c7ae0;
+}
+
+@media screen and (max-width: 768px) {
+  .roww {
+    display: block;
+  }
+
+  .roww.header {
+    padding: 0;
+    height: 0px;
+  }
+
+  .roww.header .cell {
+    display: none;
+  }
+
+  .roww .cell:before {
+    font-family: Poppins-Bold;
+    font-size: 12px;
+    color: #808080;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: unset !important;
+
+    margin-bottom: 13px;
+    content: attr(data-title);
+    min-width: 98px;
+    display: block;
+  }
+}
+
+.cell {
+  display: table-cell;
+}
+
+@media screen and (max-width: 768px) {
+  .cell {
+    display: block;
+  }
+}
+
+.row .cell {
+  font-family: Poppins-Regular;
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.2;
+  font-weight: unset !important;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.roww.header .cell {
+  font-family: Poppins-Regular;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset !important;
+
+  padding-top: 19px;
+  padding-bottom: 19px;
+}
+
+.roww .cell:nth-child(1) {
+  width: 360px;
+  padding-left: 40px;
+}
+
+.roww .cell:nth-child(2) {
+  width: 160px;
+}
+
+.roww .cell:nth-child(3) {
+  width: 250px;
+}
+
+.roww .cell:nth-child(4) {
+  width: 190px;
+}
+
+
+.table, .roww {
+  width: 100% !important;
+}
+
+.notfirst:hover {
+
+  cursor: pointer;
+  background-color: #ececff;
+}
+
+@media (max-width: 768px) {
+  .roww {
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 18px;
+    padding-top: 30px;
+    padding-right: 15px;
+    margin: 0;
+  }
+  
+  .roww .cell {
+    border: none;
+    padding-left: 10px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .roww .cell:nth-child(1) {
+    padding-left: 30px;
+  }
+  
+  .roww .cell {
+    font-family: Poppins-Regular;
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.2;
+    font-weight: unset !important;
+     
+  }
+
+  .table, .roww, .cell {
+    width: 100% !important;
+  }
+
+}
