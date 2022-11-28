@@ -22,7 +22,7 @@
 
             <!--- Item list div-->
             <div class="col-sm-12" id="itemsListDiv">
-                       <table id="shopTable" class="display" style="border-radius: 10px;color:black ;background-color: #6677ef; width: 100%">
+                       <table id="storeTable" class="display" style="border-radius: 10px;color:black ;background-color: #6677ef; width: 100%">
                     <thead>
                         <tr>
                             <th>ITEM CODE</th>
@@ -49,15 +49,15 @@
                <td >{{$newItem->created_at}}</td>
 
               <td style="display: none;" >{{$newItem->id}}</td>
-             
 
-             <td><button class="btn btn-primary view" data-toggle="modal" data-target="#TranferItem">Transer To Store</button></td>
-             
+
+             <td><button class="btn btn-primary view" data-toggle="modal" data-target="#TranferItem">Transer To Shop</button></td>
+
 
         @endforeach
-              </tr> 
+              </tr>
         </tbody>
-                
+
                 </table>
             </div>
             <!--- End of item list div-->
@@ -65,25 +65,33 @@
         </div>
     </div>
 </div>
-      <div class="modal fade" id="TranferItem" tabindex="-1" role="dialog" aria-labelledby="TranferItem" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <label for="UpdateItemTitle">Tranfer List</label>
-                                            <button type="button" class="close cancelAddItem" data-dismiss="modal" aria-label="Close"> &times;
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <label>Quantity</label>
-                                        <input name="quantity" type="number" min="0" class="form-control itemTransQty" >
-                                        </div>
-                                          <div class="modal-footer">
-                                         <button type="button" class="btn btn-primary">Transfer</button>
-                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
+
+<div class="modal fade" id="TranferItem" tabindex="-1" role="dialog" aria-labelledby="TranferItem" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form action="transferToShop" method="post">
+            @csrf
+            <div class="modal-content">
+                <div class="modal-header">
+                    <label for="UpdateItemTitle">Tranfer List</label>
+                    <button type="button" class="close cancelAddItem" data-dismiss="modal" aria-label="Close"> &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label>code</label>
+                    <input readonly name="itemCode" class="form-control itemCode" required="" id="itemCodeToTransfer" value="">
+                </div>
+                <div class="modal-body">
+                    <label>Quantity</label>
+                    <input name="itemquantity" type="number" min="0" class="form-control itemTransQty" required="">
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Transfer</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 
 
@@ -91,7 +99,16 @@
 <script type="text/javascript" src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('#shopTable').DataTable();
+        $('#storeTable').DataTable();
+    });
+    $(document).ready(function() {
+        var table = $('#storeTable').DataTable()
+        $('#storeTable tbody').on('click', 'button', function() {
+            var data = table.row($(this).parents('tr')).data();
+            console.log(data);
+            $('#itemCodeToTransfer').val(data[0])
+            //assign data to form elements
+        });
     });
 </script>
 

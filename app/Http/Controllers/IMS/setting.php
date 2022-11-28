@@ -14,18 +14,40 @@ use DB;
 use Response;
 class setting extends Controller
 {
-
-
+    public function getCategory()
+    {
+        $itemCatagoryall= DB::table('itemCategory')->get();
+        return view('Inventory.category',compact('itemCatagoryall'));
+    }
 	public function getSubCatagory()
 	{
 		$itemCatagory= DB::table('itemCategory')->get();
-		 return view('Inventory.subcategory',compact('itemCatagory'));
+        $itemSubCatagory= DB::table('itemsubcategory')->get();
+		 return view('Inventory.subcategory',compact('itemCatagory','itemSubCatagory'));
 	}
+    public function getBank()
+    {
+        $getBankall= DB::table('banks')->get();
+        return view('Inventory.bank',compact('getBankall'));
+
+    }
     public function getBankAccount()
     {
         $getBank= DB::table('banks')->orderby('name','ASC')->get();
+        $getBankAcccount= DB::table('bankaccount')->get();
          return view('Inventory.BankAccount',compact('getBank'));
     }
+    public function getBrand()
+    {
+        $getBrand= DB::table('brand')->get();
+        return view('Inventory.brand',compact('getBrand'));
+    }
+    public function getManufacture()
+    {
+        $getManufacture= DB::table('manufacture')->get();
+        return view('Inventory.manufacture',compact('getManufacture'));
+    }
+
 
    public function creatCategory(Request $req)
     {
@@ -34,18 +56,18 @@ class setting extends Controller
         $catagort->itemCatName= $req->Category;
         $catagort->save();
         return redirect()->back();
-  
+
     }
 
     public function creatSubCategory(Request $req)
     {
-    
+
     	$subCat =new itemSubCategory;
         $subCat->itemCatID= $req->subCatId;
         $subCat->itemSubCatName= $req->SubCategoryname;
         $subCat->save();
         return redirect()->back();
-  
+
     }
 
      public function creatBrand(Request $req)
@@ -55,7 +77,7 @@ class setting extends Controller
         $brand->BrandName= $req->brand;
         $brand->save();
         return redirect()->back();
-  
+
     }
 
 
@@ -66,16 +88,16 @@ class setting extends Controller
         $Manufacture->ManufactureName= $req->manufacture;
         $Manufacture->save();
         return redirect()->back();
-  
+
     }
          public function creatBank(Request $req)
     {
-       
+
         $bank =new bank;
         $bank->name= $req->name;
         $bank->save();
         return redirect()->back();
-  
+
     }
 
     public function creatBankAccount(Request $req)

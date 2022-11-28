@@ -44,19 +44,19 @@
     @include('FlashMessage.flashMessage')
     <div class="row">
         <div class="col-sm-2 form-inline form-group-sm">
-            <button onclick=toggleTransactionFormContainer(); class="btn btn-primary" id="addNewTransactionButton">Add New Transaction</button>
+            <button onclick=toggleTransactionFormContainer(); class="btn btn-primary" id="addNewTransactionButton">Add New Exchange</button>
         </div>
         <br>
         <hr>
         <div class="col-sm-12" id="transactionFormContainer" style="display:none">
             <!--- Create Transaction form-->
-            <form method="post" action="creatTransaction" id="transactionForm">
+            <form method="post" action="lendItem" id="transactionForm">
                 @csrf
 
                 <div>
                     <div class="col-sm-12 card" id="itemsListDiv">
                         <div class="card-header">
-                            Transaction
+                            Exchange
                         </div>
                         <table id="shopTable" class="table table-bordered table-left">
                             <thead>
@@ -131,26 +131,10 @@
 
 
                         <div class="col-sm-4 form-group-sm">
-                            <label for="modeOfPayment">Mode of Payment<span class="requiredStar"> *</span></label>
+                            <label for="modeOfPayment">Return Mode<span class="requiredStar"> *</span></label>
                             <select name="ModPay" class="form-control checkField" id="modeOfPayment" required>
-                                <optgroup style="font-style: italic;font-size: 20px;color: blue" label="Direct Payment">
-                                    <option value="Cash">Cash</option>
-                                    <option value="Credit">Credit</option>
-                                </optgroup>
-
-                                <optgroup style="font-style: italic;font-size: 20px;color: red" label="Mobile Banking">
-                                    @foreach($banks as $bank)
-                                <optgroup label="{{$bank->name}}">
-                                    @foreach($bankAccount as $bankAcc)
-                                    @if($bank->id== $bankAcc->bankID)
-                                    <option value="{{$bankAcc->id}}">{{$bankAcc->AcHolder}}</option>
-                                </optgroup>
-                                @endif
-                                @endforeach
-                                @endforeach
-
-
-                                </optgroup>
+                             <option value="">Pay IN Cash</option>
+                             <option value="">Change In Item</option>
                             </select>
                         </div>
                         <div class="col-sm-4 form-group-sm">
@@ -179,7 +163,7 @@
                     </div>
                     <!-- buttons -->
                     <div class="col-sm-12 form-group-sm buttons">
-                        <button type="submit" class="btn btn-primary" id="confirmSaleOrder">Confirm Order</button>
+                        <button type="submit" class="btn btn-primary" id="confirmSaleOrder">Confirm Exchange</button>
                         <button type="button" class="btn btn-danger" id="cancelSaleOrder" onclick=resetTransactionForm()>Clear Order</button>
                         <!-- <button type="button" class="btn btn-danger btn-sm" id="hideTransForm">Close</button> -->
                     </div>

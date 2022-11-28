@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\DB ;
 use Illuminate\Support\Carbon;
 class transaction extends Controller
 {
-    public function getTransForm()
+    public function
+    
+     getTransForm()
     {
         
 

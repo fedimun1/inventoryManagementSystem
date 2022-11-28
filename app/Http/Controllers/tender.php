@@ -69,15 +69,16 @@ class tender extends Controller
       return $this->createtenderr();
       }
       else{
+
            return back()->with('success','The bid cannot meet all the requirements');
 
       }
     }
-      
-   
+
+
     }
     public function createtenderr()
-    { 
+    {
        // $Department=department::all();
        // $Portfolio=portfolio::all();
       $userList = DB::table('users')
@@ -89,17 +90,17 @@ class tender extends Controller
       // $Requirnment=json($REQQ);
         return view('posts.createTender',compact('workArea','Requirnment','userList'));
     }
- 
+
     public function  createtender(Request $req)
-    { 
+    {
 
 
         // $basic  = new \Nexmo\Client\Credentials\Basic(getenv("NEXMO_KEY"), getenv("NEXMO_SECRET"));
         //     $client = new \Nexmo\Client($basic);
-  
+
         //     $receiverNumber = "251910108362";
         //     $message = "This is FROM  FEDILA";
-  
+
         //     $message = $client->message()->send([
         //         'to' => $receiverNumber,
         //         'from' => 'FEDILA MUNEWER',
@@ -127,7 +128,7 @@ class tender extends Controller
 
          if($req->country != null||$req->Region!= null||$req->Zone!= null||$req->woreda != null||$req->Kebele != null||$req->StretNumber != null||$req->BuildingNmae != null||$req->OfficeNo != null|| $req->Floor !=null||$req->landMark != null||$req->AreaName != null)
            {
-       $personalInformation =physicalAdress::create([ 
+       $personalInformation =physicalAdress::create([
         'country'=>$req->country,
         'Region'=>$req->Region,
         'Zone'=>$req->Zone,
@@ -141,7 +142,7 @@ class tender extends Controller
         'AreaName'=>$req->AreaName,
         'ZipCode'=>$req->ZipCode,
         'PoBox'=>$req->PoBox
-    
+
        ]);
        $inperson=$personalInformation->id;
      }
@@ -151,8 +152,8 @@ class tender extends Controller
      }
        if($req->Pobox != null)
        {
-       
-          $mailAdress =mailAdress::create([ 
+
+          $mailAdress =mailAdress::create([
         'FirstName'=>$req->FirstName,
         'LastName'=>$req->LastName,
         'BuisnessName'=>$req->BuisnessName,
@@ -168,8 +169,8 @@ class tender extends Controller
      {
         $mailadress_info=null;
      }
-    
-         $tender = tenderTable::create([ 
+
+         $tender = tenderTable::create([
         'TendId'=> $tenderId,
         'tend_name'=>$req->tend_name,
         'org_name'=>$req->org_name,
@@ -181,7 +182,7 @@ class tender extends Controller
         'end_date'=>$req->end_date,
         'summery'=>$req->summery,
         'site_Url'=>$req->site_Url,
-       
+
         'reg_by'=>$user_id,
         'Sub_Mat_Ex_Status'=>'pending-to-Aproval',
         'Tend_mang_Status'=>"pending-to-Aproval",
@@ -209,7 +210,7 @@ class tender extends Controller
          else
          {
             $fileName2 =null;
-               
+
          }
            if( $req->Eligiblity!=null )
          {
@@ -226,9 +227,9 @@ class tender extends Controller
          }
          else{
             $fileName4 = null;
-         }  
-          $img=image::create([ 
-        $filePath = 'public/'.$tender->id, 
+         }
+          $img=image::create([
+        $filePath = 'public/'.$tender->id,
         'filePath'=>$filePath,
         'tend_id'=> $tender->id,
             'BID' => $fileName1,
@@ -236,41 +237,41 @@ class tender extends Controller
             'Evaluation' => $fileName4,
             'Eligiblity' => $fileName3,
             // 'GuidLine'=> $fileName2,
-            // 'Others'=>  $fileName2,         
+            // 'Others'=>  $fileName2,
        ]);
            for($i=0; $i<count($req->req_id); $i++)
          {
-        $req_save=TenderRequirnmentList::create([ 
+        $req_save=TenderRequirnmentList::create([
         'req_id'=>$req->req_id[$i],
         'ted_id'=> $tender->id
        ]);
         }
           if($nameCount>1 || $phoneCount>1 || $emailCount>1)
          {
-         
+
              for($i=0; $i<$maxnumber;$i++)
          {
-        $con=contact::create([ 
+        $con=contact::create([
         'name'=>$namevalue[$i],
         'phone'=>$phonevalue[$i],
         'email'=>$emailvalue[$i],
         'web_adress'=>$req->web_adress[$i],
         'Maplink'=>$req->Maplink[$i],
-        'tend_id'=>$tender->id   
+        'tend_id'=>$tender->id
        ]);
           }
          }
          else{
-                
+
              for($i=0; $i<$maxnumber;$i++)
          {
-        $con=contact::create([ 
+        $con=contact::create([
         'name'=>$namevalue[$i],
         'phone'=>$phonevalue[$i],
         'email'=>$emailvalue[$i],
         'web_adress'=>$req->web_adress[$i],
         'Maplink'=>$req->Maplink[$i],
-        'tend_id'=>$tender->id  
+        'tend_id'=>$tender->id
 
        ]);
           }
@@ -298,19 +299,19 @@ class tender extends Controller
           return redirect()->route('getScreeaning')->with('success', 'tender registers successfully');
             }
            else{
-     
+
             DB::rollback();
            }
           //return redirect()->back();
       }
       catch(Exception $ex)
       {
-  
+
         DB::rollback();
-        return back()->with('error',' some thing wrong Tender is not save!');      
+        return back()->with('error',' some thing wrong Tender is not save!');
       }
     }
-       
+
     public function edittender(tenderregisters $tenderregisters)
      {
           // return view('posts.document',['tend'=>$tenderregisters]);
@@ -322,7 +323,7 @@ class tender extends Controller
      }
      public function update(tenderregisters $tenderregisters)
      {
-      
+
            $tenderregisters->update([
            // 'TendId'=>request('TendId'),
             'tend_name'=>request('tend_name'),
@@ -371,7 +372,7 @@ public function getTenderByRegId()
    //$forcast = DB::table('tender_tables')->where('Opp_Status', "Forcasted")->count();
    //$archive = DB::table('tender_tables')->where('Opp_Status', "Archived")->count();
    return view('User.userdashboard',compact('tender','workArea','tenderCount','cartAllcont'));
-}  
+}
 
 
  public function gettender()
@@ -389,7 +390,7 @@ public function getTenderByRegId()
 
   $tender=tenderregisters::where('user_id', $uid);
    dd($tender);
-    
+
     /* $tender = use::with('users')->find($id)->users;
  $users = DB::table('users')
 ->join('tenderregisters', 'users.id', '=', 'tenderregisters.user_id')
@@ -431,7 +432,7 @@ return $users;
          ->where('images.tend_id', $tend)->first();
       return view('posts.detailviewEligible',compact('EvaluationDocument'));
  }
-  
+
 
   public function  viewtender()
  {
@@ -464,7 +465,7 @@ return $users;
       ->where('tender_requirnment_list.ted_id', $tend_id)->get();
      // dd($Requirnment);
       return view('posts.test',compact('tenderall','contact','Requirnment','images'));
-    
+
 
  }
   public function getAllCartList()

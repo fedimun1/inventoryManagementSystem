@@ -22,7 +22,7 @@ class inventory extends Controller
 
 
      public function creatInventory()
-    { 
+    {
        $brand=Brand::all();
        $itemCategory=itemCategory::all();
        $itemSubCategory=itemSubCategory::all();
@@ -37,12 +37,12 @@ class inventory extends Controller
 
     public function creratItem(Request $req)
     {
-   
-   
+
+
           	$user_id=Auth::user()->id;
 
       $ItemCode=Helper::IDGenerator(new Items,'itemCode','5','IMSC');
- 
+
            DB::beginTransaction();
            try {
             if($req->itemInStorein=='Store')
@@ -55,12 +55,12 @@ class inventory extends Controller
                $storQuantity=0;
                $shopQuantity=$req->itemshopQuantity;
             }
-        $inventory =Items::create([ 
+        $inventory =Items::create([
         'itemCode'=>$ItemCode,
         'itemName'=>$req->itemName,
         'brandID'=>$req->brand,
         'ManufactureID'=>$req->manufactur,
-        'categoryID'=>$req->category, 
+        'categoryID'=>$req->category,
         'ReciptType'=>$req->recept,
         'amountOnRect'=>$req->amountOnRecept,
         'actualValue'=>$req->amountPaid,
@@ -70,7 +70,7 @@ class inventory extends Controller
         'itemSellPrice'=>$req->itemSellPrice,
         'itemDescription'=>$req->itemDescription,
         'reg_by'=>$user_id,
-       ]); 
+       ]);
        if($req->BoughtType == 'cash')
         {
            $cashAmount=$req->cashAmount;
@@ -94,37 +94,37 @@ class inventory extends Controller
           dd('this');
          }
           $ItemId=$inventory->id;
-          $bought =bought::create([ 
+          $bought =bought::create([
         'ItemId'=>$ItemId,
         'BoughtType'=>$req->BoughtType,
         'cashAmount'=> $cashAmount,
         'checkType'=> $checkType,
         'LenderName'=> $lenderNamevalue,
-      
-       ]); 
+
+       ]);
             if($inventory && $bought)
            {
            DB::commit();
-         
+
            return back()->with('success', 'Item registers successfully');
             }
            else{
-     
+
             DB::rollback();
-            return back()->with('error',' some thing wrong Item is not save!');   
+            return back()->with('error',' some thing wrong Item is not save!');
            }
         }
             catch (Exception $e)
              {
              	DB::rollback();
-       return back()->with('error',' some thing wrong Item is not save!');   
-           	
+       return back()->with('error',' some thing wrong Item is not save!');
+
              }
     }
 
      public function transferToShop(Request $req)
     {
-          
+
      $Items =Items::where('itemCode',$req->itemCode)->first();
 
      $ItemInStore=$Items->itemInStore-$req->itemquantity;
@@ -135,10 +135,25 @@ class inventory extends Controller
         ]);
       return redirect()->route('ItemList')->with('success','Transfer successfully');
     }
+    public function transferToStore(Request $req)
+    {
+
+     $Items =Items::where('itemCode',$req->itemCode)->first();
+     $ItemInStore=$Items->itemInStore+$req->itemquantity;
+      $itemInshop=$Items->itemInshop-$req->itemquantity;
+                  $Items->update([
+                    'itemInshop'=>$itemInshop,
+                       'itemInStore'=>$ItemInStore,
+        ]);
+      return redirect()->route('ItemList')->with('success','Transfer successfully');
+    }
+
+
+
 
        public function payCreditAmount(Request $req)
     {
-                
+
      $Itembought =bought::where('ItemId',$req->itemID)->first();
 
      $paidAmount=$Itembought->cashAmount-$req->cashAmountValue;
@@ -146,7 +161,7 @@ class inventory extends Controller
 
                   $Itembought->update([
                     'cashAmount'=>$paidAmount,
-                      
+
         ]);
       return back()->with('success','paid  successfully');
     }
@@ -154,7 +169,7 @@ class inventory extends Controller
  public function getStoreItem()
     {
          $ItemList =Items::where('itemInStore','>',0)->get();
-  
+
            return view('inventory.store',compact('ItemList'));
     }
 

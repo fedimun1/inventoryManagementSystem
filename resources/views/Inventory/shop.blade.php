@@ -33,10 +33,10 @@
                             <th>Unit Price(Sell)</th>
                             <th>Recorded Date</th>
                             <th style="display: none;">Id</th>
-                            
-                            
 
-                      
+
+
+
                             <th>transfer to shop</th>
 
                         </tr>
@@ -53,16 +53,16 @@
                <td >{{$item->created_at}}</td>
 
               <td style="display: none;" >{{$item->id}}</td>
-             
+
 
              <td><button class="btn btn-primary view" data-toggle="modal" data-target="#TranferItem">Transer To Store</button></td>
-             
+
 
         @endforeach
-              </tr> 
+              </tr>
         </tbody>
-                
-                
+
+
                 </table>
             </div>
             <!--- End of item list div-->
@@ -70,25 +70,32 @@
         </div>
     </div>
 </div>
-      <div class="modal fade" id="TranferItem" tabindex="-1" role="dialog" aria-labelledby="TranferItem" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <label for="UpdateItemTitle">Tranfer List</label>
-                                            <button type="button" class="close cancelAddItem" data-dismiss="modal" aria-label="Close"> &times;
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <label>Quantity</label>
-                                        <input name="quantity" type="number" min="0" class="form-control itemTransQty" >
-                                        </div>
-                                          <div class="modal-footer">
-                                         <button type="button" class="btn btn-primary">Transfer</button>
-                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
+<div class="modal fade" id="TranferItem" tabindex="-1" role="dialog" aria-labelledby="TranferItem" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form action="transferToStore" method="post">
+            @csrf
+            <div class="modal-content">
+                <div class="modal-header">
+                    <label for="UpdateItemTitle">Tranfer List</label>
+                    <button type="button" class="close cancelAddItem" data-dismiss="modal" aria-label="Close"> &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label>code</label>
+                    <input readonly name="itemCode" class="form-control itemCode" required="" id="itemCodeToTransfer" value="">
+                </div>
+                <div class="modal-body">
+                    <label>Quantity</label>
+                    <input name="itemquantity" type="number" min="0" class="form-control itemTransQty" required="">
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Transfer</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 
 
@@ -97,6 +104,15 @@
 <script>
     $(document).ready(function() {
         $('#shopTable').DataTable();
+    });
+    $(document).ready(function() {
+        var table = $('#shopTable').DataTable()
+        $('#shopTable tbody').on('click', 'button', function() {
+            var data = table.row($(this).parents('tr')).data();
+            console.log(data);
+            $('#itemCodeToTransfer').val(data[0])
+            //assign data to form elements
+        });
     });
 </script>
 

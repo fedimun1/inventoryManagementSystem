@@ -27,4 +27,29 @@
               </div>
             </form>
           </div>
+          <div id="" class="col-sm-12">
+                <div class="col-sm-12" id="itemsListDiv">
+                    <table id="categoryTable" class="display" style="border-radius: 10px;color:black ;background-color: #f5f5f5; width: 100%">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Item Name</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                          @foreach($itemCatagoryall as $cat)
+                          <tr>
+                          <td>{{$cat->id}}</td>
+                          <td>{{$cat->itemCatName}}</td>
+
+
+                          @endforeach
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
 @endsection

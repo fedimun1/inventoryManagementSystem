@@ -59,11 +59,10 @@
                             <div class="col-md-6">
                                 <select id="role" type="select" class="form-control" name="role" required>
                                     <option value="SystemAdmin">Admin</option>
-                                    <option value="tenderAdmin">Tender Admin</option>
-                                    <option value="tenderEncoder">Tender Encoder</option>
-                                    <option value="tenderchecker">Tender Checker</option>
-                                     <option value="SubMaterExpert">Subject Matter Expert</option>
-                                  
+                                    <option value="tenderAdmin">Sales</option>
+                                    <option value="tenderEncoder">Store Keeper</option>
+
+
                                 </select>
                                <!--  <input id="role" type="role" class="form-control @error('role') is-invalid @enderror" name="role" required autocomplete="current-role"> -->
 
@@ -73,7 +72,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div> 
+                        </div>
                           <br>
 
                         <div class="form-group row">
@@ -83,7 +82,7 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-                            <br> 
+                            <br>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -91,10 +90,10 @@
                                 </button>
                             </div>
                         </div>
-                    </form> 
+                    </form>
                         </div>
             </div>
         </div>
         </div>
-        </div>      
+        </div>
 @endsection

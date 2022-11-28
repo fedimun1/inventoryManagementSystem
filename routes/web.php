@@ -16,8 +16,8 @@ use App\Http\Controllers\IMS\shop;
 use App\Http\Controllers\IMS\setting;
 use App\Http\Controllers\IMS\report;
 use App\Http\Controllers\IMS\dashboard;
-
-
+use App\Http\Controllers\IMS\expense;
+use App\Http\Controllers\IMS\exchange;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,36 +46,41 @@ Route::get('/Inventory',[inventory::class,'creatInventory'])->name('ItemList');
 Route::get('/Store',[inventory::class,'getStoreItem']);
 Route::post('/creatItem',[inventory::class,'creratItem']);
 Route::post('/creatTransaction',[transaction::class,'creatNewTransaction']);
-Route::get('category', function () {
-    return view('Inventory.category');
-});
-Route::get('bank', function () {
-    return view('Inventory.bank');
-});
+ROUTE::get('category',[setting::class,'getCategory']);
+ROUTE::get('manufacturer',[setting::class,'getManufacture']);
+ROUTE::get('brand',[setting::class,'getBrand']);
+ROUTE::get('bank',[setting::class,'getBank']);
+
+
 Route::get('/subcategory',[setting::class,'getSubCatagory']);
 Route::get('/BankAccount',[setting::class,'getBankAccount']);
 
-// Route::get('subcategory', function () {
-//     return view('Inventory.subcategory');
-// });
+
 Route::post('/categorySave',[setting::class,'creatCategory']);
 Route::post('/subCatSave',[setting::class,'creatSubCategory']);
 Route::post('/saveAccount',[setting::class,'creatBankAccount']);
 ///////////////////transfer///////////////////////////
 Route::post('/transferToShop',[inventory::class,'transferToShop']);
+Route::post('/transferToStore',[inventory::class,'transferToStore']);
 Route::post('/payCredit',[inventory::class,'payCreditAmount']);
 
-Route::get('brand', function () {
-    return view('Inventory.brand');
-});
-Route::get('manufacturer', function () {
-    return view('Inventory.manufacture');
-});
 Route::post('/brandSave',[setting::class,'creatBrand']);
 Route::post('/manufactureSave',[setting::class,'creatManufacture']);
 Route::post('/bankSave',[setting::class,'creatBank']);
+Route::get('/GetTransactionDetail',[report::class,'GetTransactionDetail']);
 
-Route::get('/getQuantity',[report::class,'getItemQuantity']);
+Route::get('/cashSales',[report::class,'getCashSales']);
+Route::get('/creditSales',[report::class,'getCreditSales']);
+Route::get('/mobileBankingSales',[report::class,'getMobileBankingSales']);
+
+Route::get('/purchaseByCash',[report::class,'getCashPurchase']);
+Route::get('/purchaseByCredit',[report::class,'getCreditPurchase']);
+Route::get('/purchaseByLoan',[report::class,'getLoanPurchase']);
+Route::post('/saveExpense',[expense::class,'postExpense']);
+Route::get('Expense',[expense::class,'Expense']);
+Route::get('lend',[exchange ::class,'lend']);
+Route::get('borrow',[exchange::class,'borrow']);
+Route::post('lendItem',[exchange::class,'saveLendItem']);
 
 
 });
@@ -103,7 +108,7 @@ Route::get('/register', function () {
 // Route::get('/screaning', function () {
 //     return view('posts.Screan');
 // });
- 
+
 Route::get('/test1', function () {
     return view('posts.test1');
 });
@@ -140,7 +145,7 @@ Route::get('/update/{tenderregisters}/edit',[tender::class,'edit']);
 Route::get('getTender',[tender::class,'gettender']);
 */
 //Route::get('login',[logincontroller::class,'create'])->name('login');
-Route::post('register',[RegisterController::class,'create'])->name('register');
+// Route::post('register',[RegisterController::class,'create'])->name('register');
 Route::get('/TenderRegister',[tender::class,'getScreeaning'])->name('getScreeaning');
 //Route::get('/createtenderr',[tender::class,'createtenderr']);
 Route::post('Screen',[tender::class,'screaning']);

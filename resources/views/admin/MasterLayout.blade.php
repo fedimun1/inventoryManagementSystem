@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AlephTav</title>
@@ -33,7 +31,6 @@
   <link rel="stylesheet" href="AdminLTE/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-
 @yield('css')
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper" style="height: auto; min-height: 100%;">
@@ -52,12 +49,8 @@
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
           <span class="sr-only">Toggle navigation</span>
         </a>
-
         <div class="navbar-custom-menu">
-
           <ul class="nav navbar-nav " style="padding-right: 100px">
-
-
             <!-- Tasks: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -99,8 +92,6 @@
         </div>
       </nav>
     </header>
-
-
     <aside class="main-sidebar">
       <!-- sidebar: style can be found in sidebar.less -->
       <section class="sidebar" style="height: auto;">
@@ -137,6 +128,21 @@
               <i class="glyphicon glyphicon-btc"></i> <span>Transactions</span>
             </a>
           </li>
+
+          <li class="treeview">
+          <a href="#">
+            <i class="glyphicon glyphicon-wrench"></i> <span>Exchange</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="lend"><i class="fa fa-circle-o"></i>Lend</a></li>
+            <li><a href="borrow"><i class="fa fa-circle-o"></i>Borrow</a></li>
+
+          </ul>
+        </li>
+
           <li class="treeview">
             <a href="#">
               <i class="glyphicon glyphicon-lock"></i> <span>Admin Management</span>
@@ -167,20 +173,63 @@
             <li><a href="BankAccount"><i class="fa fa-circle-o"></i> Register Bank Account</a></li>
           </ul>
         </li>
+
+          <li class="treeview">
+
+        <li class="treeview" style="height: auto;">
+          <a href="#">
+            <i class="fa fa-share"></i> <span>Report</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+         <ul class="treeview-menu" style="display: none;">
+            <li class="treeview" style="height: auto;">
+              <a href="#"><i class="fa fa-circle-o"></i>Sales
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+         <ul class="treeview-menu" style="display: none;">
+                <li><a href="cashSales"><i class="fa fa-circle-o"></i>cash</a></li>
+                <li><a href="creditSales"><i class="fa fa-circle-o"></i>Credit</a></li>
+                <li><a href="mobileBankingSales"><i class="fa fa-circle-o"></i>Mobile Banking</a></li>
+              </ul>
+            </li>
+          <li class="treeview" style="height: auto;">
+              <a href="#"><i class="fa fa-circle-o"></i>Purchase
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+         <ul class="treeview-menu" style="display: none;">
+                <li><a href="purchaseByCash"><i class="fa fa-circle-o"></i>Cash</a></li>
+                <li><a href="purchaseByCredit"><i class="fa fa-circle-o"></i>Credit</a></li>
+                <li><a href="purchaseByLoan"><i class="fa fa-circle-o"></i>Loan</a></li>
+              </ul>
+            </li>
+          <li class="treeview" style="height: auto;">
+              <a href="#"><i class="fa fa-circle-o"></i>Expense
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+         <ul class="treeview-menu" style="display: none;">
+                <li><a href="Expense"><i class="fa fa-circle-o"></i>Expense</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </section>
       <!-- /.sidebar -->
     </aside>
-
-
     <div class="content-wrapper" style="min-height: 916px;">
       <section class="content">
         @yield('content')
       </section>
     </div>
-
   </div>
   <!--modal for profile-->
-
   <div class="modal fade" id="modal_profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered  " role="document">
       <div class="modal-content">
@@ -214,15 +263,12 @@
 
   <!-- Modal  user detail view
 -->
-
-
-
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0
     </div>
     <strong><a href="#">Alephtav consultancy</a>.</strong>
-  </footer>s
+  </footer>
 
   <!-- Control Sidebar -->
 
@@ -276,7 +322,7 @@
   <!-- DataTables -->
   <script src="AdminLTE/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
   <script src="AdminLTE/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
- 
+
 </body>
   @stack('script')
 </html>

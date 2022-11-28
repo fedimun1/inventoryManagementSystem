@@ -408,7 +408,7 @@
       <b>Version</b> 1.0
     </div>
     <strong><a href="#">Alephtav consultancy</a>.</strong>
-  </footer>s
+  </footer>
 
   <!-- Control Sidebar -->
   
